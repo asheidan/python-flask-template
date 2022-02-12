@@ -48,15 +48,24 @@ documentation for `virtualenv` if you need to use a specific version of python.
 
 All of this of course is dependent on virtualenv (and python) being installed already.
 
+You should also add your virtualenv to your `.gitignore` file:
+```sh
+echo /venv >> .gitignore
+```
+You can also just add the line `/venv` to the file .gitignore in the project
+root with your editor.
+
 
 #### Installing virtualenv
 
-Installing virtualenv can be done in way too many ways, I will just list one way for Fedora and one for MacOS.
+Installing virtualenv can be done in way too many ways, I will just list one
+way for Fedora and one for MacOS.
 
 
 ##### Fedora
 
-Use the system package manager. That will ensure that all other dependencies are installed as well:
+Use the system package manager. That will ensure that all other dependencies
+are installed as well:
 
 ```sh
 sudo dnf install python3-virtualenv
@@ -65,7 +74,8 @@ sudo dnf install python3-virtualenv
 
 ##### MacOS
 
-You probably want to use Homebrew, unless you already know how to install it (but then why are you reading this).
+You probably want to use Homebrew, unless you already know how to install it
+(but then why are you reading this).
 
 ```sh
 brew install virtualenv
@@ -107,7 +117,10 @@ To install these into your virtualenv you use the pip that's in your virtualenv:
 ./venv/bin/pip install -r requirements.txt
 ```
 
-Examine the output from this to make sure that this doesn't result in any errors. You can also make sure that your dependencies are installed into your virtualenv by starting the python in your virtualenv and try to import the dependency:
+Examine the output from this to make sure that this doesn't result in any
+errors. You can also make sure that your dependencies are installed into your
+virtualenv by starting the python in your virtualenv and try to import the
+dependency:
 ```sh
 ./venv/bin/python -c 'import flask'
 ./venv/bin/python -c 'import psycopg2'
@@ -116,7 +129,8 @@ Neither of these should give you any errors, they might not even give you any ou
 
 ### Test run your app
 
-If you have gotten this far you should be able to run your flask-app by running the following in your project folder:
+If you have gotten this far you should be able to run your flask-app by running
+the following in your project folder:
 ```sh
 ./venv/bin/python app.py
 ```
